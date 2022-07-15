@@ -19,12 +19,12 @@ Please modify the `data_root` in any configs you would like to run. We will use 
 To train the model, you can run:
 ```
 python train.py configs/culane_res18.py --log_path /path/to/your/work/dir
-
+```
 or
-
+```
 python -m torch.distributed.launch --nproc_per_node=8 train.py configs/culane_res18.py --log_path /path/to/your/work/dir
 ```
-It should be noted that if you use different number of GPU, the learning rate should be adjusted accordingly. The configs' learning rate corresponds to 8-GPU training on CULane and CurveLanes datasets. **If you want to train on CULane or CurveLanes with single GPU, please decrease the learning rate by a factor of 1/8.** On the Tusimple, the learning rate corresponds to single GPU training.
+It should be noted that if you use different number of GPUs, the learning rate should be adjusted accordingly. The configs' learning rates correspond to 8-GPU training on CULane and CurveLanes datasets. **If you want to train on CULane or CurveLanes with single GPU, please decrease the learning rate by a factor of 1/8.** On the Tusimple, the learning rate corresponds to single GPU training.
 # Trained models
 We provide trained models on CULane, Tusimple, and CurveLanes.
 
@@ -69,5 +69,6 @@ year = {2020}
   volume={},
   number={},
   pages={1-14},
-  doi={10.1109/TPAMI.2022.3182097}}
+  doi={10.1109/TPAMI.2022.3182097}
+}
 ```
