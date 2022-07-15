@@ -1,0 +1,12 @@
+**/__pycache__
+*.pyc
+*.pth
+*vscode
+**/build
+evaluate 
+*.pt
+*.png
+**/build
+**/dist
+**/*egg-info
+*.lprof
