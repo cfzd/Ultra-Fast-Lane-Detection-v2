@@ -5,3 +5,4 @@ addict
 sklearn
 pathspec
 imagesize
+ujson
