@@ -51,6 +51,12 @@ mkdir tmp
 python -m torch.distributed.launch --nproc_per_node=8 test.py configs/culane_res18.py --test_model /path/to/your/model.pth --test_work_dir ./tmp
 ```
 
+# Visualization
+We provide a script to visualize the detection results. Run the following commands to visualize on the testing set of CULane.
+```
+python demo.py configs/culane_res18.py --test_model /path/to/your/culane_res18.pth
+```
+
 # Citation
 
 ```BibTeX
