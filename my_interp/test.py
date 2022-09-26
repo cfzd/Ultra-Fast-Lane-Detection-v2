@@ -24,7 +24,7 @@ def test(culane_root):
     all_points[:,:,1] = np.tile(the_anno_row_anchor, (4,1))
     all_points[:,:,0] = -99999
 
-    label_img = cv2.imread(os.path.join(culane_root, '/laneseg_label_w16/driver_161_90frame/06031919_0929.MP4/00000.png')[:,:,0])
+    label_img = cv2.imread(os.path.join(culane_root, '/laneseg_label_w16/driver_161_90frame/06031919_0929.MP4/00000.png'))[:,:,0]
 
     for lane_idx , lane in enumerate(lanes):
         ll = lane.strip().split(' ')
@@ -46,7 +46,7 @@ def test(culane_root):
     new_all_points = my_interp.run(all_points.float(), new_interp_locations.float(), 0)
     # new_interp_locations = torch.linspace(0,1640,100).cuda()
     # new_all_points = my_interp.run(all_points.float(), new_interp_locations.float(), 1)
-    img = cv2.imread(os.path.join(culane_root, '/laneseg_label_w16/driver_161_90frame/06031919_0929.MP4/00000.png') * 128)
+    img = cv2.imread(os.path.join(culane_root, '/laneseg_label_w16/driver_161_90frame/06031919_0929.MP4/00000.png')) * 128
     img = draw_points(img, all_points, (0,255,0))
     img = draw_points(img, new_all_points, (0,0,255))
     cv2.imwrite('test.png', img)
