@@ -18,11 +18,11 @@
 
     ```Shell
     # If you dont have pytorch
-    conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+    conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 
     pip install -r requirements.txt
 
-    pip install --extra-index-url https://developer.download.nvidia.com/compute/redist --upgrade nvidia-dali-cuda102
+    pip install --extra-index-url https://developer.download.nvidia.com/compute/redist --upgrade nvidia-dali-cuda110
     # Install Nvidia DALI (Very fast data loading lib))
 
     cd my_interp
