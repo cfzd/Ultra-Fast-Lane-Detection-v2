@@ -69,7 +69,7 @@ Use trtexec to convert engine model
 `trtexec --onnx=ufldv2_culane_res34_320x1600.onnx --saveEngine=ufldv2_culane_res34_320x1600.engine`
 
 ### Do inference
-`python trt_infer.py --config_path  configs/culane_res34.py --engine_path weights/ufldv2_culane_res34_320x1600.engine --video_path example.mp4`
+```python trt_infer.py --config_path  configs/culane_res34.py --engine_path weights/ufldv2_culane_res34_320x1600.engine --video_path example.mp4```
 
 # Citation
 
