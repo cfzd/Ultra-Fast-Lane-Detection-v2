@@ -113,11 +113,10 @@ class UFLDv2:
         cuda.memcpy_htod(self.inputs[0]['allocation'], img)
         self.context.execute_v2(self.allocations)
         preds = {}
-        names = ['loc_row', 'loc_col', 'exist_row', 'exist_col']
-        for out, name in zip(self.outputs, names):
+        for out in self.outputs:
             output = np.zeros(out['shape'], out['dtype'])
             cuda.memcpy_dtoh(output, out['allocation'])
-            preds[name] = torch.tensor(output)
+            preds[out['name']] = torch.tensor(output)
         coords = self.pred2coords(preds)
         for lane in coords:
             for coord in lane:
