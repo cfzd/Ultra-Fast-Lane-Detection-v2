@@ -57,6 +57,19 @@ We provide a script to visualize the detection results. Run the following comman
 python demo.py configs/culane_res18.py --test_model /path/to/your/culane_res18.pth
 ```
 
+# Tensorrt Deploy
+We also provide a python script to do tensorrt inference on videos.
+
+### get onnx model
+Download the onnx model using the following script: https://github.com/PINTO0309/PINTO_model_zoo/blob/main/324_Ultra-Fast-Lane-Detection-v2/download.sh. And copy `ufldv2_culane_res34_320x1600.onnx` to `weights/ufldv2_culane_res18_320x1600.onnx`
+
+### Convert
+Use trtexec to convert engine model
+`trtexec --onnx=ufldv2_culane_res34_320x1600.onnx --saveEngine=ufldv2_culane_res34_320x1600.engine`
+
+### Do inference
+`python trt_infer.py --config_path  configs/culane_res34.py --engine_path weights/ufldv2_culane_res34_320x1600.engine --video_path example.mp4`
+
 # Citation
 
 ```BibTeX
