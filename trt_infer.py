@@ -8,7 +8,7 @@ import argparse
 from utils.config import Config
 
 
-class CLRNet:
+class UFLDv2:
     def __init__(self, engine_path, config_path, ori_size):
         self.logger = trt.Logger(trt.Logger.ERROR)
         with open(engine_path, "rb") as f, trt.Runtime(self.logger) as runtime:
@@ -138,7 +138,7 @@ def get_args():
 if __name__ == "__main__":
     args = get_args()
     cap = cv2.VideoCapture(args.video_path)
-    isnet = CLRNet(args.engine_path, args.config_path, args.ori_size)
+    isnet = UFLDv2(args.engine_path, args.config_path, args.ori_size)
     while True:
         success, img = cap.read()
         img = cv2.resize(img, (1600, 903))
