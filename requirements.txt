@@ -6,3 +6,5 @@ sklearn
 pathspec
 imagesize
 ujson
+torch
+torchvision
